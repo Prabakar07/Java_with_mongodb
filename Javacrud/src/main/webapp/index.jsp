@@ -4,28 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
-    <script>
-        function getAllUsers() {
-            fetch('controller.do?action=getall')
-                .then(response => response.json())
-                .then(users => {
-                    const tableBody = document.getElementById('userTableBody');
-                    tableBody.innerHTML = ''; // Clear existing table rows
-                    users.forEach(user => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${user.user_id}</td>
-                            <td>${user.user_name}</td>
-                        `;
-                        tableBody.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error fetching users:', error));
-        }
-
-        // Fetch all users when the page loads
-        window.onload = getAllUsers;
-    </script>
+    
 </head>
 <body>
     <h1>User Management</h1>
